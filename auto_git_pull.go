@@ -15,7 +15,7 @@ import (
 
 const (
 	// 配置文件
-	CONF_FILE string = "auth_pull_conf"
+	CONF_FILE string = "auto_pull_conf"
 )
 
 func main() {

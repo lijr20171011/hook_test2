@@ -1,6 +1,6 @@
 ../hook_test1
 git pull
-go build
+bee run
 kill -9 $(ps -ef|grep hook_test1|grep -v grep|awk '{print $2}')
 nohup hook_test1 &
 \n
