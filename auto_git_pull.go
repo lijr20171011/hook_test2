@@ -53,7 +53,11 @@ func GitHubHookTest1(w http.ResponseWriter, r *http.Request) {
 	}
 	// 按照换行符分割
 	text := string(bytes)
-	cmdarr := strings.Split(text, "\r\n")
+	lineEnd := "\r\n"
+	if runtime.GOOS == "linux" {
+		lineEnd = "\n"
+	}
+	cmdarr := strings.Split(text, lineEnd)
 	// 是否调到新文件
 	isBegin := true
 	for _, val := range cmdarr {
